@@ -23,7 +23,8 @@ User Query (Streamlit UI)
         │
         ├── Approved ──────────────────────────────► Final Brief + Markdown Export
         └── Revision Needed (max 1 loop) ──► [Analyst Revision] ──► [Final Critic Review] ──► Final Brief
-
+```
+---
 
 ### Design Choices
 * **Shared Typed State (`schemas.py`):** All agents read from and update a single `ResearchState` Pydantic model (`SearchFinding`, `CompetitorInfo`, `ResearchBrief`, `CriticReview`), eliminating brittle string parsing between stages.
