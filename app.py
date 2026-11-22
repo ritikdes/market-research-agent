@@ -148,6 +148,9 @@ def main() -> None:
         st.divider()
         render_brief(state.final_brief)
 
+        if state.critic_feedback and not state.critic_feedback.approved:
+            st.warning(f"Critic still had concerns: {state.critic_feedback.feedback}")
+
         md_report = brief_to_markdown(state.query, state)
         st.download_button(
             label="Download Brief (.md)",
